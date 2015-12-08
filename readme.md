@@ -52,6 +52,7 @@ Loop syntax tells the parser to iterate over a block of JSON until a condition
 is satisfied. It is used to define templated content - for each party in a
 contract, for example.
 
+```json
     {
       "document": [
         {
@@ -78,11 +79,13 @@ contract, for example.
         }
       ]
     }
+```
 
 #### If Syntax
 
 If syntax tells the parser to conditionally include a block of JSON or to skip it.
 
+```json
     {
       "document": [
         {
@@ -110,7 +113,7 @@ If syntax tells the parser to conditionally include a block of JSON or to skip i
         }
       ]
     }
-
+```
 
 ### Dependencies
 
