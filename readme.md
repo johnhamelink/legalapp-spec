@@ -43,8 +43,74 @@ content should be displayed, as well as allowing for iteration over data.
 
 #### Example Iterator Types:
 
- - Loop Syntax (More info is #TODO)
- - If Syntax (More info is #TODO)
+ - Loop Syntax
+ - If Syntax
+
+#### Loop Syntax
+
+Loop syntax tells the parser to iterate over a block of JSON until a condition
+is satisfied. It is used to define templated content - for each party in a
+contract, for example.
+
+    {
+      "document": [
+        {
+          "type": "directive",
+          "directive": {
+            "type": "iterator-begin",
+            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
+          }
+        },
+        {
+          "type": "content-snippet",
+          "content-snippet": [
+            "# Header",
+            "## Subtitle",
+            "lorem ipsum dolor sit amet."
+          ]
+        },
+        {
+          "type": "directive",
+          "directive": {
+            "type": "iterator-end",
+            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
+          }
+        }
+      ]
+    }
+
+#### If Syntax
+
+If syntax tells the parser to conditionally include a block of JSON or to skip it.
+
+    {
+      "document": [
+        {
+          "type": "directive",
+          "directive": {
+            "type": "if",
+            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245",
+            "if": ["{{foo}}", "eq", "bar"]
+          }
+        },
+        {
+          "type": "content-snippet",
+          "content-snippet": [
+            "# Header",
+            "## Subtitle",
+            "lorem ipsum dolor sit amet."
+          ]
+        },
+        {
+          "type": "directive",
+          "directive": {
+            "type": "end-if",
+            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
+          }
+        }
+      ]
+    }
+
 
 ### Dependencies
 
