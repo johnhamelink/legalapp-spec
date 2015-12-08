@@ -53,32 +53,32 @@ is satisfied. It is used to define templated content - for each party in a
 contract, for example.
 
 ```json
+{
+  "document": [
     {
-      "document": [
-        {
-          "type": "directive",
-          "directive": {
-            "type": "iterator-begin",
-            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
-          }
-        },
-        {
-          "type": "content-snippet",
-          "content-snippet": [
-            "# Header",
-            "## Subtitle",
-            "lorem ipsum dolor sit amet."
-          ]
-        },
-        {
-          "type": "directive",
-          "directive": {
-            "type": "iterator-end",
-            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
-          }
-        }
+      "type": "directive",
+      "directive": {
+        "type": "iterator-begin",
+        "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
+      }
+    },
+    {
+      "type": "content-snippet",
+      "content-snippet": [
+        "# Header",
+        "## Subtitle",
+        "lorem ipsum dolor sit amet."
       ]
+    },
+    {
+      "type": "directive",
+      "directive": {
+        "type": "iterator-end",
+        "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
+      }
     }
+  ]
+}
 ```
 
 #### If Syntax
@@ -86,33 +86,33 @@ contract, for example.
 If syntax tells the parser to conditionally include a block of JSON or to skip it.
 
 ```json
+{
+  "document": [
     {
-      "document": [
-        {
-          "type": "directive",
-          "directive": {
-            "type": "if",
-            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245",
-            "if": ["{{foo}}", "eq", "bar"]
-          }
-        },
-        {
-          "type": "content-snippet",
-          "content-snippet": [
-            "# Header",
-            "## Subtitle",
-            "lorem ipsum dolor sit amet."
-          ]
-        },
-        {
-          "type": "directive",
-          "directive": {
-            "type": "end-if",
-            "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
-          }
-        }
+      "type": "directive",
+      "directive": {
+        "type": "if",
+        "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245",
+        "if": ["{{foo}}", "eq", "bar"]
+      }
+    },
+    {
+      "type": "content-snippet",
+      "content-snippet": [
+        "# Header",
+        "## Subtitle",
+        "lorem ipsum dolor sit amet."
       ]
+    },
+    {
+      "type": "directive",
+      "directive": {
+        "type": "end-if",
+        "id": "716ad2e0-ef48-4135-bda9-6cb9622d9245"
+      }
     }
+  ]
+}
 ```
 
 ### Dependencies
